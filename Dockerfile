@@ -41,3 +41,21 @@ RUN python3 /tmp/get-pip.py
 
 # Remove all the extra build stuff
 #RUN apk del build-base "*-dev"
+
+
+# make a rest-service-machine-learning user
+RUN adduser -D rsml
+WORKDIR /home/rsml
+
+RUN apk --no-cache --update-cache add python3-dev musl-dev
+
+# make a virtual environment, install key komponents
+# The gunicorn and gevent components are for high performance servers. Adjust in boot.sh
+#RUN PYTHONPATH=/usr/bin/python pip install --upgrade pip 
+RUN PYTHONPATH=/usr/bin/python pip install bottle
+RUN PYTHONPATH=/usr/bin/python pip install requests
+
+# RUN venv/bin/pip install numpy
+RUN PYTHONPATH=/usr/bin/python pip install gunicorn
+
+RUN PYTHONPATH=/usr/bin/python pip install gevent
