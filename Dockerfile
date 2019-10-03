@@ -42,6 +42,7 @@ RUN python3 /tmp/get-pip.py
 # Remove all the extra build stuff
 #RUN apk del build-base "*-dev"
 
+## The following is moved from the test docker:
 
 # make a rest-service-machine-learning user
 RUN adduser -D rsml
@@ -53,7 +54,7 @@ RUN apk --no-cache --update-cache add python3-dev musl-dev
 # The gunicorn and gevent components are for high performance servers. Adjust in boot.sh
 #RUN PYTHONPATH=/usr/bin/python pip install --upgrade pip 
 RUN PYTHONPATH=/usr/bin/python pip install bottle
-RUN PYTHONPATH=/usr/bin/python pip install requests
+RUN PYTHONPATH=/usr/bin/python pip install requests numpy pandas scipy scikit-learn
 
 # RUN venv/bin/pip install numpy
 RUN PYTHONPATH=/usr/bin/python pip install gunicorn
