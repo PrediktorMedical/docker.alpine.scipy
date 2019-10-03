@@ -1,7 +1,7 @@
 # Alpine based Dockerimage for Python with SciPy-stack
 
 This repository contains a Dockerfile for building a python ready image
-that is running based on Alpine 3.4 and Python 3.6
+that is running based on Alpine 3.10 and Python 3.6
 
 It provides the following python libaries
 
