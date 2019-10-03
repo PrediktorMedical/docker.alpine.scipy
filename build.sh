@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-docker build -t prediktor/alpine-scipy .
-docker push prediktor/alpine-scipy
+docker build -t hummerfisker/alpine-scipy .
+docker push hummerfisker/alpine-scipy
